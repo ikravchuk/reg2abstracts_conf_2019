@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1d0672a6e2c611247311c4cbe42cb322fbe531a37beb3205c6f005aeae465125"
+            "sha256": "04f72d133fa11e3bda20fc84fae599961c9d1f87ac9c296f4a09e4023feb4279"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -70,6 +70,13 @@
             "index": "pypi",
             "version": "==0.24.2"
         },
+        "pypandoc": {
+            "hashes": [
+                "sha256:e914e6d5f84a76764887e4d909b09d63308725f0cbb5293872c2c92f07c11a5b"
+            ],
+            "index": "pypi",
+            "version": "==1.4"
+        },
         "python-dateutil": {
             "hashes": [
                 "sha256:7e6584c74aeed623791615e26efd690f29817a27c73085b78e4bad02493df2fb",
@@ -90,6 +97,13 @@
                 "sha256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
             ],
             "version": "==1.12.0"
+        },
+        "wheel": {
+            "hashes": [
+                "sha256:66a8fd76f28977bb664b098372daef2b27f60dc4d1688cfab7b37a09448f0e9d",
+                "sha256:8eb4a788b3aec8abf5ff68d4165441bc57420c9f64ca5f471f58c3969fe08668"
+            ],
+            "version": "==0.33.1"
         },
         "xlrd": {
             "hashes": [
