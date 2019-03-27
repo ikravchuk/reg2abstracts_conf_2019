@@ -1,4 +1,5 @@
 import pandas as pd
+import pypandoc
 
 registration_data = pd.read_excel('registration_data.xlsx',
                                   names = ['reg_date',
@@ -16,10 +17,26 @@ registration_data = pd.read_excel('registration_data.xlsx',
                                            'title_en',
                                            'abstract'])
 
+# Data Cleaning
 registration_data['type'] = registration_data['type'].map(lambda x : x[:x.find(' (')])
+registration_data['title_en'] = registration_data['title_en'].map(lambda x : x.title())
+
 print('Total number: {}'.format(len(registration_data)))
 print('Sections :')
 print(registration_data['section'].value_counts())
 print('Types :')
 print(registration_data['type'].value_counts())
-print(registration_data)
+
+# Markdown file for abstract book
+md = ''
+for row in registration_data.itertuples():
+    title = '# {}\n'.format(row.title_en)
+    md += title
+    abstract = '{}'.format(row.abstract)
+    md += abstract
+    md += '<div style="page-break-after: always;"></div>'
+
+output = pypandoc.convert_text(md, 'docx', format = 'md', outputfile = 'abstracts.docx')
+assert output == ''
+
+#print(registration_data)
