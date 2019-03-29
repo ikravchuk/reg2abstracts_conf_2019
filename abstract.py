@@ -57,6 +57,7 @@ for row in registration_data.itertuples():
                     coauthors += ', ' + '{}^{}^'.format(coauth[0].strip(), i + 1)
     coauthors += "**"
     abstract = '{}'.format(row.abstract)
+    abstract = abstract.replace('Aim.', '**Aim.**').replace('Methods.', '**Methods.**').replace('Results.', '**Results.**').replace('Conclusions.', '**Conclusions.**')
     
     # markdown compilation
     md += title
